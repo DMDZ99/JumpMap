@@ -314,6 +314,7 @@ GameObject:
   - component: {fileID: 492287855}
   - component: {fileID: 492287857}
   - component: {fileID: 492287856}
+  - component: {fileID: 492287858}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -495,8 +496,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 55
   cameraContainer: {fileID: 1614005437}
-  minXLook: -85
-  maxXLook: 85
+  minXLook: -65
+  maxXLook: 65
   lookSensitivity: 0.1
 --- !u!114 &492287857
 MonoBehaviour:
@@ -511,6 +512,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
+  condition: {fileID: 0}
+--- !u!114 &492287858
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492287851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 007b6aec298f32d4e8f1f8f5820e2947, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiCondition: {fileID: 0}
+  noHungerHealthDecay: 2
 --- !u!1 &531577677
 GameObject:
   m_ObjectHideFlags: 0
@@ -561,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.8196079, g: 0.011764707, b: 0.10588236, a: 1}
+  m_Color: {r: 0.54901963, g: 0.34509805, b: 0.16078432, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -931,9 +947,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curValue: 0
-  startValue: 400
-  maxValue: 500
-  passiveValue: -20
+  startValue: 100
+  maxValue: 100
+  passiveValue: 1
   uiBar: {fileID: 1590648116}
 --- !u!1 &1224111552
 GameObject:
@@ -1101,9 +1117,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curValue: 0
-  startValue: 0
-  maxValue: 0
-  passiveValue: 0
+  startValue: 400
+  maxValue: 500
+  passiveValue: 20
   uiBar: {fileID: 531577679}
 --- !u!1 &1590648114
 GameObject:
@@ -1592,6 +1608,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1a4769b87aeea246b120cc707762812, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: {fileID: 1209217309}
+  hunger: {fileID: 1253771211}
+  stamina: {fileID: 1968720909}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
