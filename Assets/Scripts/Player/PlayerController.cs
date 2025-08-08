@@ -111,19 +111,19 @@ public class PlayerController : MonoBehaviour
         return false;
     }
 
-    public void OnInventory(InputAction.CallbackContext context)
+    public void OnInventory(InputAction.CallbackContext context)    // 인벤토리
     {
-        if (context.phase == InputActionPhase.Started)
+        if (context.phase == InputActionPhase.Started)              // 만약 Started면
         {
-            inventory?.Invoke();
-            ToggleCursor();
+            inventory?.Invoke();                                    // 인벤토리를 실행, null이면 무시
+            ToggleCursor();                                         // 토글 커서 형태로 전환
         }
     }
 
     void ToggleCursor()
     {
-        bool toggle = Cursor.lockState == CursorLockMode.Locked;
-        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;
-        canLook = !toggle;
+        bool toggle = Cursor.lockState == CursorLockMode.Locked;                    // 토글의 잠금을 bool값으로
+        Cursor.lockState = toggle ? CursorLockMode.None : CursorLockMode.Locked;    // 잠금이면 None으로 아니면 잠금으로
+        canLook = !toggle;  // canLook값 토글반대로
     }
 }

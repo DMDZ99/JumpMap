@@ -36,21 +36,21 @@ public class UIInventory : MonoBehaviour
         condition = CharacterManager.Instance.Player.condition;
         dropPosition = CharacterManager.Instance.Player.dropPosition;
 
-        controller.inventory += Toggle;
-        CharacterManager.Instance.Player.addItem += AddItem;
+        controller.inventory += Toggle;                         // 컨트롤러 인벤토리에 토글메서드 추가
+        CharacterManager.Instance.Player.addItem += AddItem;    // 플레이어의 addItem에 AddItem 추가
 
-        inventoryWindow.SetActive(false);
-        slots = new ItemSlot[slotPanel.childCount];
+        inventoryWindow.SetActive(false);                       // 시작했을때는 인벤토리창 안보이게
+        slots = new ItemSlot[slotPanel.childCount];             // 슬롯 = 슬롯패널 자식수로
 
         for (int i = 0; i < slots.Length; i++)
         {
-            slots[i] = slotPanel.GetChild(i).GetComponent<ItemSlot>();
-            slots[i].index = i;
-            slots[i].inventory = this;
-            slots[i].Clear();
+            slots[i] = slotPanel.GetChild(i).GetComponent<ItemSlot>();  // 슬롯i번째 = 슬롯패널에 i번째 자식에서 ItemSlot 가져오기
+            slots[i].index = i;         // 슬롯 인덱스 설정
+            slots[i].inventory = this;  // 슬롯 인벤토리 = 자기자신
+            slots[i].Clear();           // 슬롯 비우기
         }
 
-        ClearSelectedItemWindow();
+        ClearSelectedItemWindow();      // 선택아이템창 초기화
     }
 
     // Update is called once per frame
@@ -59,50 +59,50 @@ public class UIInventory : MonoBehaviour
 
     }
 
-    void ClearSelectedItemWindow()
+    void ClearSelectedItemWindow()      // 선택 아이템창 초기화
     {
-        selectedItemName.text = string.Empty;
+        selectedItemName.text = string.Empty;           // 텍스트 다 비우고
         selectedItemDescription.text = string.Empty;
         selectedStatName.text = string.Empty;
         selectedStatValue.text = string.Empty;
 
-        useButton.SetActive(false);
+        useButton.SetActive(false);                     // 버튼 다 비활성화
         equipButton.SetActive(false);
         unequipButton.SetActive(false);
         dropButton.SetActive(false);
     }
 
 
-    public void Toggle()
+    public void Toggle()                        // 토글
     {
-        if (IsOpen())
+        if (IsOpen())                           // IsOpen이면
         {
-            inventoryWindow.SetActive(false);
+            inventoryWindow.SetActive(false);   // 닫기
         }
         else
         {
-            inventoryWindow.SetActive(true);
+            inventoryWindow.SetActive(true);    // 열기
         }
     }
 
-    public bool IsOpen()
+    public bool IsOpen()                        // IsOpen메서드
     {
-        return inventoryWindow.activeInHierarchy;
+        return inventoryWindow.activeInHierarchy;   // 인벤토리창 활성화되어있는지를 반환
     }
 
     void AddItem()
     {
-        ItemData data = CharacterManager.Instance.Player.itemData;
+        ItemData data = CharacterManager.Instance.Player.itemData;  // 플레이어에 있는 아이템 데이터를 가져온다
 
         // 아이템이 중복 가능한지 canStack
         if (data.canStack)
         {
-            ItemSlot slot = GetItemStack(data);
+            ItemSlot slot = GetItemStack(data); // 스택되는 아이템 찾기
             if (slot != null)
             {
-                slot.quantity++;
+                slot.quantity++;            // 해당 슬롯 수량 증가
                 UpdateUI();
-                CharacterManager.Instance.Player.itemData = null;
+                CharacterManager.Instance.Player.itemData = null; // 플레이어 아이템 데이터 초기화
                 return;
             }
         }
@@ -113,7 +113,7 @@ public class UIInventory : MonoBehaviour
         // 비어있는 슬롯이 있다면
         if (emptySlot != null)
         {
-            emptySlot.item = data;
+            emptySlot.item = data;      // 비어있는 슬롯에 데이터 넣음
             emptySlot.quantity = 1;
             UpdateUI();
             CharacterManager.Instance.Player.itemData = null;
@@ -130,13 +130,13 @@ public class UIInventory : MonoBehaviour
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i].item != null)
+            if (slots[i].item != null)      // 슬롯에 아이템 있으면
             {
-                slots[i].Set();
+                slots[i].Set();             // 슬롯에 있는 셋
             }
             else
             {
-                slots[i].Clear();
+                slots[i].Clear();           // 클리어
             }
         }
     }
