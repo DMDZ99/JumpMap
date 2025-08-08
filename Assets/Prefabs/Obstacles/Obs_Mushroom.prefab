@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2538400662007260740}
   - component: {fileID: 2646809577418459885}
   m_Layer: 0
-  m_Name: Item_Mushroom
+  m_Name: Obs_Mushroom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,6 +74,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a7d311bda241ce45b339b79da0e12b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
 --- !u!65 &2646809577418459885
 BoxCollider:
   m_ObjectHideFlags: 0

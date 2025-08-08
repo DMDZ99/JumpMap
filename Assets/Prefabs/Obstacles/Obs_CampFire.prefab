@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8893152222963986820}
   - component: {fileID: 6888204827115073683}
   m_Layer: 0
-  m_Name: CampFire
+  m_Name: Obs_CampFire
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

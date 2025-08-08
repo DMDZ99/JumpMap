@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2388271616181197127}
   - component: {fileID: 850242548477775319}
   m_Layer: 0
-  m_Name: Item_WoodFence
+  m_Name: Obs_WoodFence
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
