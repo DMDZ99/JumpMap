@@ -10,16 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1311808571e444b49a0115080da65754, type: 3}
-  m_Name: Item_Soda
+  m_Name: Item_Burger
   m_EditorClassIdentifier: 
-  displayName: "\uC18C\uB2E4"
-  description: "\uC2A4\uD0DC\uBBF8\uB098\uB97C \uC989\uC2DC \uD68C\uBCF5\uD569\uB2C8\uB2E4."
+  displayName: "\uD584\uBC84\uAC70"
+  description: "\uC9C0\uC18D\uC801\uC778 \uCCB4\uB825\uD68C\uBCF5\uC744 \uD560 \uC218
+    \uC788\uC2B5\uB2C8\uB2E4."
   type: 1
-  icon: {fileID: 21300000, guid: 24732fb15ff1a904586f5acab050363c, type: 3}
-  dropPrefab: {fileID: 4643167692181079170, guid: ed039c263c62f4943be295745775c514, type: 3}
+  icon: {fileID: 21300000, guid: a22c8194aac0d8a4bb8f29def2f46c8e, type: 3}
+  dropPrefab: {fileID: 181421993707746614, guid: f550df6b64fc2a64e824c450887dd5ab, type: 3}
   canStack: 1
   maxStackAmount: 5
   consumables:
-  - type: 1
-    value: 20
+  - type: 0
+    value: 30
   equipPrefab: {fileID: 0}
