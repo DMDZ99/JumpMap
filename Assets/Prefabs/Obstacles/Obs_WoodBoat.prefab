@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 5116060425530173752}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2.279}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -93,7 +93,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1826792683881437771}
   - component: {fileID: 21458120632215213}
-  - component: {fileID: 4635714614035729634}
   - component: {fileID: 63666701864996856}
   m_Layer: 0
   m_Name: Obs_WoodBoat
@@ -145,18 +144,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4635714614035729634
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8490287922426676019}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a7d311bda241ce45b339b79da0e12b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &63666701864996856
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -177,4 +164,4 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.3398235, y: 0.45907062, z: 2.4779358}
-  m_Center: {x: 0.013518453, y: 0.08376607, z: -2.519166}
+  m_Center: {x: 0.013518453, y: 0.08376607, z: -0.18}

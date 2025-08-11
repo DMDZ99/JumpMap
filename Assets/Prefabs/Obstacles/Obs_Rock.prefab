@@ -93,7 +93,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2592745976486870078}
   - component: {fileID: 3492198473175981723}
-  - component: {fileID: 4582395456603560163}
   - component: {fileID: 2704660473439896690}
   m_Layer: 0
   m_Name: Obs_Rock
@@ -145,18 +144,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4582395456603560163
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7915789854683854935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a7d311bda241ce45b339b79da0e12b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &2704660473439896690
 BoxCollider:
   m_ObjectHideFlags: 0

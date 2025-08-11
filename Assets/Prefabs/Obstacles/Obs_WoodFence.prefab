@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8867657808243443007}
   - component: {fileID: 4135962520843209387}
-  - component: {fileID: 2388271616181197127}
   - component: {fileID: 850242548477775319}
   m_Layer: 0
   m_Name: Obs_WoodFence
@@ -62,18 +61,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2388271616181197127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 486872394585870689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a7d311bda241ce45b339b79da0e12b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &850242548477775319
 BoxCollider:
   m_ObjectHideFlags: 0
