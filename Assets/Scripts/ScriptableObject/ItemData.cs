@@ -22,6 +22,10 @@ public class ItemDataConsumable
 {
     public ConsumableType type;
     public float value;
+
+    //[Header("RegenHeal")]       // 지속회복
+    //public bool isRegen;        // 여부
+    //public float duration;      // 지속시간
 }
 
 [CreateAssetMenu(fileName = "Item", menuName = "New Item")]

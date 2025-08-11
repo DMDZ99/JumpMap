@@ -20,6 +20,9 @@ public class PlayerCondition : MonoBehaviour, IDamageable   // 인터페이스 구현으
 
     public event Action onTakeDamage;       // 데미지 입었을때 이벤트
 
+    //private float healthRegen = 0f; // 지속회복량
+    //private float healthRegenDuration = 0f; // 지속회복시간
+
     void Update()
     {
         hunger.Subtract(hunger.passiveValue * Time.deltaTime);  // 배고픔 줄어듬 시간마다
@@ -30,7 +33,14 @@ public class PlayerCondition : MonoBehaviour, IDamageable   // 인터페이스 구현으
             health.Subtract(noHungerHealthDecay * Time.deltaTime);
         }
 
-        if(health.curValue <= 0f)       // 체력 0이하면 사망
+        //if (healthRegenDuration > 0f)       // 지속 회복 로직
+        //{
+        //    health.Add(healthRegen * Time.deltaTime);
+        //    healthRegenDuration -= Time.deltaTime;
+        //}
+
+
+        if (health.curValue <= 0f)       // 체력 0이하면 사망
         {
             Die();
         }
@@ -67,4 +77,10 @@ public class PlayerCondition : MonoBehaviour, IDamageable   // 인터페이스 구현으
         stamina.Subtract(amount);
         return true;
     }
+
+    //public void StartHealthRegen(float regen, float duration)   // 지속회복 시작 로직
+    //{
+    //    healthRegen = regen;
+    //    healthRegenDuration = duration;
+    //}
 }
