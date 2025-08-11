@@ -9,7 +9,7 @@ public enum AIState
     Attacking
 }
 
-public class NPC : MonoBehaviour
+public class NPC : MonoBehaviour, IDamageable
 {
     [Header("Stats")]
     public int health;

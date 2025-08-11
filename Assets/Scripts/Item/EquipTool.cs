@@ -8,12 +8,10 @@ public class EquipTool : Equip
     private bool attacking;
     public float attackDistance;
 
-    [Header("Resource Gathering")]
-    public bool doesGatherResources;
-
     [Header("Combat")]
     public bool doesDealDamage;
     public int damage;
+    public float useStamina;
 
     private Animator animator;
     
@@ -26,9 +24,25 @@ public class EquipTool : Equip
     {
         if (!attacking)
         {
-            attacking = true;
-            animator.SetTrigger("Attack");
-            Invoke("OnCanAttack", attackRate);
+            if (CharacterManager.Instance.Player.condition.UseStamina(useStamina))
+            {
+                attacking = true;
+                animator.SetTrigger("Attack");
+                Invoke("OnCanAttack", attackRate);
+
+                Collider[] hits = Physics.OverlapSphere(transform.position, attackDistance);    // 공격 범위
+                foreach (Collider hit in hits)
+                {
+                    if (hit.CompareTag("NPC"))
+                    {
+                        NPC npc = hit.GetComponent<NPC>();
+                        if (npc != null)
+                        {
+                            npc.TakePhysicalDamage(damage);
+                        }
+                    }
+                }
+            }
         }
     }
 

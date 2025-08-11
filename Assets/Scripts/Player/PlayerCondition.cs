@@ -57,4 +57,14 @@ public class PlayerCondition : MonoBehaviour, IDamageable   // 인터페이스 구현으
         health.Subtract(damage);                // 체력 감소
         onTakeDamage?.Invoke();                 // onTakeDamage null 검사후 실행
     }
+
+    public bool UseStamina(float amount)
+    {
+        if (stamina.curValue - amount < 0f)
+        {
+            return false;
+        }
+        stamina.Subtract(amount);
+        return true;
+    }
 }
