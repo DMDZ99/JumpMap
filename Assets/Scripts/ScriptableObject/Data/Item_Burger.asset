@@ -22,5 +22,7 @@ MonoBehaviour:
   maxStackAmount: 5
   consumables:
   - type: 0
-    value: 30
+    value: 50
+    isRegen: 1
+    duration: 5
   equipPrefab: {fileID: 0}

@@ -206,7 +206,14 @@ public class UIInventory : MonoBehaviour
                 switch (selectedItem.consumables[i].type)
                 {
                     case ConsumableType.Health:                             // 체력회복타입일때 회복
-                        condition.Heal(selectedItem.consumables[i].value);
+                        if (selectedItem.consumables[i].isRegen)    // 지속회복
+                        {
+                            StartCoroutine(condition.HealRegenTime(selectedItem.consumables[i].value, selectedItem.consumables[i].duration));
+                        }
+                        else
+                        {
+                            condition.Heal(selectedItem.consumables[i].value);  // 그냥회복
+                        }
                         break;
                     case ConsumableType.Hunger:
                         condition.Eat(selectedItem.consumables[i].value);   // 먹는타입일때 배고픔회복

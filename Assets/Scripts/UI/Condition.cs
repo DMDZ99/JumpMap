@@ -12,13 +12,11 @@ public class Condition : MonoBehaviour
     public float passiveValue;
     public Image uiBar;
 
-    // Start is called before the first frame update
     void Start()
     {
         curValue = startValue;
     }
 
-    // Update is called once per frame
     void Update()
     {
         uiBar.fillAmount = GetPercentage(); // fillAmount �ִ밪 = 1
